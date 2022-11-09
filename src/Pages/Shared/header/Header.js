@@ -32,17 +32,9 @@ const Header = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
                         <li><a href="/">Home</a></li>
-                        <li tabIndex={0}>
-                            <a href="/">
-                                Parent
-                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
-                            </a>
-                            <ul className="p-2">
-                                <li><a href="/">Submenu 1</a></li>
-                                <li><a href="/">Submenu 2</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/">Blog</a></li>
+                        <li><a href="/services">Services</a></li>
+
+                        <li><a href="/Blog">Blog</a></li>
                         <li><a href="/login">Login</a></li>
                         <li><a href="/signup">SignUp</a></li>
                     </ul>
