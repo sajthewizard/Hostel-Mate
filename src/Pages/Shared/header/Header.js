@@ -43,6 +43,8 @@ const Header = () => {
                             </ul>
                         </li>
                         <li><a href="/">Blog</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/signup">SignUp</a></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
