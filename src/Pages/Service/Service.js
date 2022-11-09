@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
     const { name, title, img, _id, Subscription, time, rating } = service;
@@ -12,7 +13,7 @@ const Service = ({ service }) => {
                 </h2>
                 <p>{title}</p>
                 <div className="card-actions justify-between">
-                    <button className="btn btn-outline btn-accent btn-xs">Details</button>
+                    <Link to={`/services/${_id}`}><button className="btn btn-outline btn-accent btn-xs">Details</button></Link>
 
                     <div className="badge badge-outline">{time}</div>
                     <div className="badge badge-outline">{Subscription}</div>
