@@ -2,7 +2,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Authcontext } from '../../contexts/Authprovider/Authprovider';
 import ReviewViews from '../ReviewViews/ReviewViews';
 
+
 const Myreviews = () => {
+
     const { user } = useContext(Authcontext);
     const [reviews, setReviews] = useState([]);
     console.log(reviews);
@@ -12,6 +14,9 @@ const Myreviews = () => {
             .then(data => setReviews(data))
 
     }, [user?.email])
+    if (reviews.length === 0) {
+        return <h1 className='text-5xl flex justify-center align-middle'>No reviews were added</h1>
+    }
 
     return (
 

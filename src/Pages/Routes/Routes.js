@@ -1,3 +1,4 @@
+import AddService from "../AddService/AddService";
 import Blog from "../Blog/Blog";
 import Home from "../Home/Home";
 import MAin from "../Layout/Main/MAin";
@@ -49,6 +50,10 @@ export const router = createBrowserRouter([
                 path: '/myreviews',
                 element: <PrivateRoutes><Myreviews></Myreviews></PrivateRoutes>
             },
+            {
+                path: '/addservice',
+                element: <PrivateRoutes><AddService></AddService></PrivateRoutes>
+            }
         ]
     }, { path: '*', element: <div className="text-5xl text-center text-error-content my-36"><h1>404! Check and try again</h1></div> }
 ]

@@ -8,7 +8,7 @@ import { FaStar } from 'react-icons/fa';
 const HomeData = ({ service }) => {
     const { name, title, img, _id, Subscription, time, rating } = service;
     return (
-        <div className="card w-96 bg-indigo-400 shadow-xl ">
+        <div className="card w-96 bg-secondary shadow-xl ">
             <figure>
                 <PhotoProvider>
                     <PhotoView src={img}>

@@ -1,6 +1,9 @@
 import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ReviewViews = ({ review }) => {
+    const notify = () => toast("You Review has been deleted!");
     const { servicename, reviewData, _id } = review;
     const handeleDelete = id => {
         const proceed = window.confirm('Please Confirm to delete the Review');
@@ -13,7 +16,7 @@ const ReviewViews = ({ review }) => {
                 .then(data => {
                     console.log(data)
                     if (data.acknowledged) {
-                        return alert('Review has been Deleted');
+                        return notify();
 
                     }
                 })
@@ -33,6 +36,8 @@ const ReviewViews = ({ review }) => {
                     <button onClick={() => handeleDelete(_id)} className="btn btn-ghost">Delete</button>
 
                 </div>
+                <ToastContainer />
+
             </div>
         </div>
     );

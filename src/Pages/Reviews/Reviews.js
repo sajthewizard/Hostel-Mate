@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Authcontext } from '../../contexts/Authprovider/Authprovider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Reviews = ({ data }) => {
     const { name, _id } = data;
+    const notify = () => toast("Your review has been added!");
 
 
 
@@ -39,7 +42,7 @@ const Reviews = ({ data }) => {
             .then(data => {
 
                 if (data.acknowledged) {
-                    alert('Review added')
+                    notify();
                     console.log(data)
                     form.reset();
 
@@ -74,6 +77,7 @@ const Reviews = ({ data }) => {
 
 
             </form>
+            <ToastContainer />
 
         </div>
     );
