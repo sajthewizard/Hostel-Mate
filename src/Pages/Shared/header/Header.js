@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Authcontext } from '../../../contexts/Authprovider/Authprovider';
 import a from "../../a.jpg"
 
 const Header = () => {
+
+    const { user, logOut } = useContext(Authcontext)
+    const handleSignOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
+
     return (
         <div>
             <div className="navbar h-20 mb-4 bg-base-100">
@@ -13,36 +23,68 @@ const Header = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><a href="/">Home</a></li>
-                            <li tabIndex={0}>
-                                <a href="/" className="justify-between">
-                                    Parent
-                                    <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-                                </a>
-                                <ul className="p-2">
-                                    <li><a href="/">Submenu 1</a></li>
-                                    <li><a href="/">Submenu 2</a></li>
-                                </ul>
+                            <li><a href="/services">Services</a></li>
+
+                            <li><a href="/Blog">Blog</a></li>
+                            <li>
+                                {
+                                    user?.uid ?
+                                        <>
+                                            <button onClick={handleSignOut}>Signout</button>
+                                            {user?.displayName}
+
+
+                                        </>
+                                        :
+                                        <>  <Link to="login">Login</Link>
+
+                                            <Link to="/signup">Register</Link>
+                                        </>
+                                }
                             </li>
-                            <li><a href="/">Blog</a></li>
                         </ul>
                     </div>
                     <Link to="/" className="btn btn-ghost normal-case text-xl">
-                        <img className="rounded-full" style={{ height: '30px' }} src={a}></img>  HosTel-MatE</Link>
+                        <img className="rounded-full" style={{ height: '30px' }} src={a}></img>  HosTel MatE</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal p-0">
+                    <ul className="menu menu-horizontal p-0 gap-2">
                         <li><a href="/">Home</a></li>
                         <li><a href="/services">Services</a></li>
 
                         <li><a href="/Blog">Blog</a></li>
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/signup">SignUp</a></li>
+                        <li>
+                            {
+                                user?.uid ?
+                                    <>
+                                        <button onClick={handleSignOut}>Signout</button>
+                                        {user?.displayName}
+
+
+                                    </>
+                                    :
+                                    <>  <Link to="login">Login</Link>
+
+                                        <Link to="/signup">Register</Link>
+                                    </>
+                            }
+                        </li>
+
+
                     </ul>
+
+
                 </div>
+
+
+
+
+
                 <div className="navbar-end">
                     <button className="btn btn-active btn-ghost">Booking</button>
                 </div>
             </div>
+
 
         </div>
     );
