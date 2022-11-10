@@ -8,7 +8,7 @@ const ReviewViews = ({ review }) => {
     const handeleDelete = id => {
         const proceed = window.confirm('Please Confirm to delete the Review');
         if (proceed) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://hostel-mate-srver.vercel.app/reviews/${id}`, {
                 method: 'Delete'
 
             })

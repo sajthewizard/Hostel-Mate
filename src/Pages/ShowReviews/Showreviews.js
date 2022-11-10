@@ -3,12 +3,13 @@
 import React, { useEffect, useState } from 'react';
 import PreviousReviews from '../PreviousReviews/PreviousReviews';
 
-const Showreviews = ({ id }) => {
-    const { _id } = id;
+const Showreviews = ({ _id }) => {
+    ''
+
     const [reviews, setReviews] = useState([]);
     console.log(reviews);
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?_id=${_id}`)
+        fetch(`https://hostel-mate-srver.vercel.app/reviews?_id=${_id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

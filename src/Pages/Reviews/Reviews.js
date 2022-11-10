@@ -69,7 +69,7 @@ const Reviews = ({ data }) => {
                     {
                         user ? (<input className='btn mx-auto mb-8' type="submit" value="Add Review" />)
                             : <>
-                                <Link className="  text-2xl" to="/login">Please Login to add Review!</Link></>
+                                <Link className="  text-2xl" to="/login">Please <input className="btn btn-primary" type="submit" value="Login" /> to add Review!</Link></>
                     }
 
                 </span>

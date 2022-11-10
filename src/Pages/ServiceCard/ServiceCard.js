@@ -36,7 +36,7 @@ const ServiceCard = () => {
                     </div>
                 </div>
             </div>
-            <Showreviews id={_id}></Showreviews>
+            <Showreviews _id={_id}></Showreviews>
             <Reviews data={data}></Reviews>
 
         </div>

@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
             {
                 path: '/services/:id',
                 element: <ServiceCard></ServiceCard>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://hostel-mate-srver.vercel.app/services/${params.id}`)
             },
             {
                 path: '/myreviews',

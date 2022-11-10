@@ -10,7 +10,7 @@ import Banner from './Banner/Banner';
 const Home = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/limservices')
+        fetch('https://hostel-mate-srver.vercel.app/limservices')
             .then(res => res.json())
             .then(data => setServices(data))
     })
