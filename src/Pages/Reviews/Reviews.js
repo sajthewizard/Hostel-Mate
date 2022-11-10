@@ -2,23 +2,25 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Authcontext } from '../../contexts/Authprovider/Authprovider';
 
-const Reviews = ({ id }) => {
+const Reviews = ({ data }) => {
+    const { name, _id } = data;
 
 
 
     const handleReview = event => {
         event.preventDefault();
         const form = event.target;
-        const name = `${form.firstname.value} ${form.lastname.value}`;
+        const namee = `${form.firstname.value} ${form.lastname.value}`;
         const email = user?.email;
-        const review = form.review.value;
-        const URL = form.URL.value;
+        const reviewData = form.review.value;
+        const URL = user?.photoURL;
 
         const update = {
-            service: id,
-            CustomerName: name,
+            service: _id,
+            servicename: name,
+            CustomerName: namee,
             email,
-            review,
+            reviewData,
             URL
 
 
@@ -35,10 +37,12 @@ const Reviews = ({ id }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                if (data.acknowladged) {
-                    form.reset();
+
+                if (data.acknowledged) {
                     alert('Review added')
+                    console.log(data)
+                    form.reset();
+
                 }
             })
             .catch(er => console.error(er));

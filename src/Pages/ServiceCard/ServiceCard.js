@@ -5,10 +5,14 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { FaStar } from 'react-icons/fa';
 import Reviews from '../Reviews/Reviews';
+import Showreviews from '../ShowReviews/Showreviews';
 
 const ServiceCard = () => {
     useTitle('Service')
     const { name, title, img, _id, Subscription, time, rating } = useLoaderData();
+
+    const data = { name, _id };
+    console.log(_id);
 
     return (
         <div>
@@ -32,7 +36,8 @@ const ServiceCard = () => {
                     </div>
                 </div>
             </div>
-            <Reviews id={_id}></Reviews>
+            <Showreviews id={_id}></Showreviews>
+            <Reviews data={data}></Reviews>
 
         </div>
 
