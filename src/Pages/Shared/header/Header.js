@@ -58,7 +58,12 @@ const Header = () => {
                                 user?.uid ?
                                     <>
                                         <button onClick={handleSignOut}>Signout</button>
-                                        {user?.displayName}
+
+                                        <>  <Link to="/myreviews">My Reviews</Link>
+
+                                            <Link to="/signup">Add Service</Link>
+                                        </>
+
 
 
                                     </>
@@ -81,7 +86,8 @@ const Header = () => {
 
 
                 <div className="navbar-end">
-                    <button className="btn btn-active btn-ghost">Booking</button>
+                    {user?.displayName}
+
                 </div>
             </div>
 
