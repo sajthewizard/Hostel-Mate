@@ -1,6 +1,7 @@
 
 
 import React, { useEffect, useState } from 'react';
+import PreviousReviews from '../PreviousReviews/PreviousReviews';
 
 const Showreviews = ({ id }) => {
     const { _id } = id;
@@ -14,8 +15,31 @@ const Showreviews = ({ id }) => {
 
     return (
         <div>
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full">
 
-            <h1>total: {reviews.length}</h1>
+                    <thead>
+                        <tr>
+
+                            <th>Name</th>
+                            <th>Review</th>
+                            <th>Service Name</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {
+                            reviews.map(previousreviews => <PreviousReviews key={previousreviews._id} previousreviews={previousreviews}></PreviousReviews>)
+                        }
+
+
+                    </tbody>
+
+
+
+                </table>
+            </div>
 
         </div>
     );
