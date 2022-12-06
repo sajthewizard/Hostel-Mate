@@ -1,16 +1,12 @@
-N.B.Had issue with vercel was in support seesion for 2 hours. Mim bhai and two others were there and Mim bhai has my email and said my submission will be considered in 60.
 
 
 
 Name : HosTel MatE
+
+
 Live Link: https://hostel-mate-8688b.web.app/
 
 
-* Practice of useState,useState,useLoaction
-* Custom hook use
-* private route and auth practice
-* Backend mongodb learned
-* backend data sort 
 
 
 
